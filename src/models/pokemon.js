@@ -9,6 +9,7 @@ const validTypes = [
     "Electrik",
     "Fée",
 ];
+
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
         "Pokemon",

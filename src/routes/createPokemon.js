@@ -1,9 +1,10 @@
 const { ValidationError, UniqueConstraintError } = require("sequelize");
 const { Pokemon } = require("../db/sequelize");
 const { TypesValidate } = require("../models/pokemon");
+const auth = require("../auth/auth");
 
 module.exports = (app) => {
-    app.post("/api/pokemons", (req, res) => {
+    app.post("/api/pokemons", auth, (req, res) => {
         Pokemon.create(req.body)
             .then((pokemon) => {
                 const message = `Le pokémon ${req.body.name} a bien été crée.`;

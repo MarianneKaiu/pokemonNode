@@ -22,14 +22,8 @@ module.exports = (sequelize, DataTypes) => {
             name: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                unique: true,
-                validate: {
-                    notEmpty: {
-                        msg: "Les points de vie sont une propriétée requise.",
-                    },
-                    notNull: {
-                        msg: "Les points de vie sont une propriétée requise.",
-                    },
+                unique: {
+                    msg: "L'identifiant est déja utilisé par une autre personne.",
                 },
             },
             hp: {
